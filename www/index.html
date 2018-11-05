@@ -616,6 +616,30 @@
         /*fileAppNew = new FileApp();
         fileAppNew.run();*/
 
+        var permissions = cordova.plugins.permissions;
+        var list = [
+            permissions.CAMERA,
+            permissions.GET_ACCOUNTS
+        ];
+
+        permissions.hasPermission(list, callback, null);
+
+        function error() {
+            console.warn('Camera or Accounts permission is not turned on');
+        }
+
+        function success(status) {
+            if (!status.hasPermission) {
+
+                permissions.requestPermissions(
+                    list,
+                    function (status) {
+                        if (!status.hasPermission) error();
+                    },
+                    error);
+            }
+        }
+
         mcc = new mccApp();
         mcc.run();
 
