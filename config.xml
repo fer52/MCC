@@ -22,7 +22,7 @@
 
  <!-- custom config example -->
      <custom-config-file target="AndroidManifest.xml" parent="/*">
-        <uses-permission android:name="android.permission.READ_CONTACTS" android:maxSdkVersion="15" />
+        <uses-permission android:name="android.permission.READ_CONTACTS" />
         <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     </custom-config-file>
 
