@@ -20,6 +20,9 @@ mccApp.prototype = function() {
     run = function(){
         var that = this;
         //$seatPicker=$('#seatPicker');
+
+        $("labelVersion").text('Update: ' + AppVersion.version);
+
         alert('test');
         $('#cliente').on('pagebeforeshow',$.proxy(_clearClient,that));
         $('#addcredito').on('pagebeforeshow',$.proxy(_clearCredito,that));

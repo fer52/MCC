@@ -42,4 +42,7 @@
     <icon height="180" src="www/img/icon.png" width="180" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <feature name="RareloopAppVersion">
+        <param name="android-package" value="com.rareloop.cordova.appversion.RareloopAppVersion" />
+    </feature>
 </widget>
