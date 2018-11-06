@@ -614,7 +614,7 @@
             permissions.GET_ACCOUNTS
         ];
 
-        permissions.hasPermission(list, function(){
+        permissions.hasPermission(list, function () {
             alert('validacion de permisos');
         }, null);
 
@@ -634,6 +634,13 @@
             }
         }
 
+        permissions.requestPermissions(
+            list,
+            function (status) {
+                if (!status.hasPermission) error();
+            },
+            error);
+
     </script>
 
     <script type="text/javascript" charset="utf-8" src="js/fileHelper.js"></script>
@@ -645,7 +652,7 @@
     <script src="js/validate.js" type="text/javascript"></script>
 
     <script>
-        
+
         mcc = new mccApp();
         mcc.run();
 
